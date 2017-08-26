@@ -1,0 +1,23 @@
+<div class="jumbotron">
+  <div class="row">
+    <div class="col-sm-8">
+      <h1 class="display-3">{{ pageTitle }}</h1>
+      <p class="lead">Choose a trening for today.</p>
+    </div>
+    <div class="col-sm-4">
+      <h3 class="display-3">Filter by: {{ listFilter }}</h3>
+      <input type='text' [(ngModel)]='listFilter'/>
+    </div>
+  </div>
+  <hr class="my-4">
+  
+  <ul class="row">
+    <li class="col-sm-6 col-md-4" *ngFor='let training of filteredTrainings'>
+      <a href="" class="training-card">
+        <h2>{{ training.trainingTitle }}</h2>
+        <p>{{ training.description }}</p>
+      </a>
+    </li>
+  </ul>
+</div>
+
