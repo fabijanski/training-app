@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ITraining } from './training';
+import { TrainingService } from './training.service'
 
 @Component({
   selector: 'app-training-list',
@@ -19,68 +20,9 @@ export class TrainingListComponent implements OnInit {
   }
 
   filteredTrainings: ITraining[];
-  trainings: ITraining[] = [
-    {
-      'trainingId': 1,
-      'trainingTitle': 'Quick Warm-up',
-      'bodyParts': 'Legs, shoulders, biceps',
-      'description': 'Very poor training!',
-      'difficulty': 1
-    },
-    {
-      'trainingId': 2,
-      'trainingTitle': 'Long Warm-up',
-      'bodyParts': 'Triceps, belly, legs',
-      'description': 'Quite poor training!',
-      'difficulty': 2
-    },
-    {
-      'trainingId': 3,
-      'trainingTitle': 'Shoulders Day',
-      'bodyParts': 'Legs, shoulders, biceps',
-      'description': 'Nice training!',
-      'difficulty': 4
-    },
-    {
-      'trainingId': 4,
-      'trainingTitle': 'Leg Day',
-      'bodyParts': 'Triceps, belly, legs',
-      'description': 'Medium level training!',
-      'difficulty': 3
-    },
-      {
-        'trainingId': 5,
-      'trainingTitle': 'Cardio on foot',
-      'bodyParts': 'Legs, shoulders, biceps',
-      'description': 'Nice training!',
-      'difficulty': 4
-    },
-    {
-      'trainingId': 6,
-      'trainingTitle': 'Cardio on bike',
-      'bodyParts': 'Triceps, belly, legs',
-      'description': 'Medium level training!',
-      'difficulty': 3
-    },
-    {
-      'trainingId': 7,
-      'trainingTitle': 'Strength',
-      'bodyParts': 'Legs, shoulders, biceps',
-      'description': 'Very nice training!',
-      'difficulty': 5
-    },
-    {
-      'trainingId': 8,
-      'trainingTitle': 'Lazy Sunday',
-      'bodyParts': 'Triceps, belly, legs',
-      'description': 'Very poor training!',
-      'difficulty': 1
-    }
-  ];
+  trainings: ITraining[] = []
 
-  constructor() {
-    this.filteredTrainings = this.trainings;
-    this.listFilter = 'cardio';
+  constructor(private _trainingService: TrainingService) {
   }
 
   performFilter(filterBy: string): ITraining[] {
@@ -88,7 +30,9 @@ export class TrainingListComponent implements OnInit {
     return this.trainings.filter((training: ITraining) => training.trainingTitle.toLocaleLowerCase().indexOf(filterBy) !== -1);
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.trainings = this._trainingService.getTrainings();
+    this.filteredTrainings = this.trainings;
   }
 
 }
