@@ -4,11 +4,13 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { TrainingListComponent } from './training-list/training-list.component';
+import { StarComponent } from './shared/star/star.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TrainingListComponent
+    TrainingListComponent,
+    StarComponent
   ],
   imports: [
     BrowserModule,

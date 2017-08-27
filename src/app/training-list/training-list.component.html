@@ -16,6 +16,7 @@
       <a href="" class="training-card">
         <h2>{{ training.trainingTitle }}</h2>
         <p>{{ training.description }}</p>
+        <app-star [difficulty]='training.difficulty'></app-star>
       </a>
     </li>
   </ul>

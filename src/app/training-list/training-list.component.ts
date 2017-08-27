@@ -24,57 +24,57 @@ export class TrainingListComponent implements OnInit {
       'trainingId': 1,
       'trainingTitle': 'Quick Warm-up',
       'bodyParts': 'Legs, shoulders, biceps',
-      'description': 'Very nice training!',
-      'difficulty': 4
+      'description': 'Very poor training!',
+      'difficulty': 1
     },
     {
       'trainingId': 2,
       'trainingTitle': 'Long Warm-up',
       'bodyParts': 'Triceps, belly, legs',
-      'description': 'Very nice training!',
-      'difficulty': 4
+      'description': 'Quite poor training!',
+      'difficulty': 2
     },
     {
       'trainingId': 3,
       'trainingTitle': 'Shoulders Day',
       'bodyParts': 'Legs, shoulders, biceps',
-      'description': 'Very nice training!',
+      'description': 'Nice training!',
       'difficulty': 4
     },
     {
       'trainingId': 4,
       'trainingTitle': 'Leg Day',
       'bodyParts': 'Triceps, belly, legs',
-      'description': 'Very nice training!',
-      'difficulty': 4
+      'description': 'Medium level training!',
+      'difficulty': 3
     },
       {
         'trainingId': 5,
       'trainingTitle': 'Cardio on foot',
       'bodyParts': 'Legs, shoulders, biceps',
-      'description': 'Very nice training!',
+      'description': 'Nice training!',
       'difficulty': 4
     },
     {
       'trainingId': 6,
       'trainingTitle': 'Cardio on bike',
       'bodyParts': 'Triceps, belly, legs',
-      'description': 'Very nice training!',
-      'difficulty': 4
+      'description': 'Medium level training!',
+      'difficulty': 3
     },
     {
       'trainingId': 7,
       'trainingTitle': 'Strength',
       'bodyParts': 'Legs, shoulders, biceps',
       'description': 'Very nice training!',
-      'difficulty': 4
+      'difficulty': 5
     },
     {
       'trainingId': 8,
       'trainingTitle': 'Lazy Sunday',
       'bodyParts': 'Triceps, belly, legs',
-      'description': 'Very nice training!',
-      'difficulty': 4
+      'description': 'Very poor training!',
+      'difficulty': 1
     }
   ];
 
