@@ -1,69 +1,26 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/throw';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/do';
 
 import { ITraining } from './training';
 
 @Injectable()
 export class TrainingService {
+  private _trainingUrl = './api/trainings/trainings.json';
 
-  getTrainings(): ITraining[] {
-    return [
-      {
-        'trainingId': 1,
-        'trainingTitle': 'Quick Warm-up',
-        'bodyParts': 'Legs, shoulders, biceps',
-        'description': 'Very poor training!',
-        'difficulty': 1
-      },
-      {
-        'trainingId': 2,
-        'trainingTitle': 'Long Warm-up',
-        'bodyParts': 'Triceps, belly, legs',
-        'description': 'Quite poor training!',
-        'difficulty': 2
-      },
-      {
-        'trainingId': 3,
-        'trainingTitle': 'Shoulders Day',
-        'bodyParts': 'Legs, shoulders, biceps',
-        'description': 'Nice training!',
-        'difficulty': 4
-      },
-      {
-        'trainingId': 4,
-        'trainingTitle': 'Leg Day',
-        'bodyParts': 'Triceps, belly, legs',
-        'description': 'Medium level training!',
-        'difficulty': 3
-      },
-        {
-          'trainingId': 5,
-        'trainingTitle': 'Cardio on foot',
-        'bodyParts': 'Legs, shoulders, biceps',
-        'description': 'Nice training!',
-        'difficulty': 4
-      },
-      {
-        'trainingId': 6,
-        'trainingTitle': 'Cardio on bike',
-        'bodyParts': 'Triceps, belly, legs',
-        'description': 'Medium level training!',
-        'difficulty': 3
-      },
-      {
-        'trainingId': 7,
-        'trainingTitle': 'Strength',
-        'bodyParts': 'Legs, shoulders, biceps',
-        'description': 'Very nice training!',
-        'difficulty': 5
-      },
-      {
-        'trainingId': 8,
-        'trainingTitle': 'Lazy Sunday',
-        'bodyParts': 'Triceps, belly, legs',
-        'description': 'Very poor training!',
-        'difficulty': 1
-      }
-    ];
+  constructor(private _http: HttpClient) {}
+
+  getTrainings(): Observable<ITraining[]> {
+    return this._http.get<ITraining[]>(this._trainingUrl)
+      .do(data => console.log('All: ' + JSON.stringify(data)))
+      .catch(this.handleError);
   }
 
+  private handleError(err: HttpErrorResponse) {
+    console.log(err.message);
+    return Observable.throw(err.message);
+  }
 }

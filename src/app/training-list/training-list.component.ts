@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ITraining } from './training';
-import { TrainingService } from './training.service'
+import { TrainingService } from './training.service';
 
 @Component({
   selector: 'app-training-list',
@@ -9,6 +9,7 @@ import { TrainingService } from './training.service'
 })
 export class TrainingListComponent implements OnInit {
   pageTitle: string = 'List of Trainings';
+  errorMessage: string;
 
   _listFilter: string;
   get listFilter(): string {
@@ -20,7 +21,7 @@ export class TrainingListComponent implements OnInit {
   }
 
   filteredTrainings: ITraining[];
-  trainings: ITraining[] = []
+  trainings: ITraining[] = [];
 
   constructor(private _trainingService: TrainingService) {
   }
@@ -31,8 +32,13 @@ export class TrainingListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.trainings = this._trainingService.getTrainings();
-    this.filteredTrainings = this.trainings;
+    this._trainingService.getTrainings()
+      .subscribe(
+        trainings => {
+          this.trainings = trainings;
+          this.filteredTrainings = this.trainings;
+        },
+        error => this.errorMessage = <any>error);
   }
 
 }
