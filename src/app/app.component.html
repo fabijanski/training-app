@@ -1,6 +1,27 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div class="container">
-  <h1>{{title}}</h1>
-  <app-training-list></app-training-list>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="">{{ title }}</a>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li><a [routerLink]="['/welcome']">Home</a></li>
+        <li><a [routerLink]="['/trainings']">Trainings List</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a>SignUp <span class="glyphicon glyphicon-plus-sign"></span></a></li>
+        <li><a>Login <span class="glyphicon glyphicon-user"></span></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="wrapper">
+  <router-outlet></router-outlet>
 </div>
 
+<footer>
+  <div class="container">
+    <p>Copyright &copy; <a href="https://github.com/fabijanski">fabijanski</a> 2017. All rights reserved.</p>
+  </div>
+</footer>

@@ -1,11 +1,25 @@
 * {
   font-family: Arial, Helvetica, sans-serif;
 }
+
 h1 {
   color: #369;
   font-size: 250%;
 }
+
 h2, h3 {
   font-weight: lighter;
 }
 
+footer {
+  text-align: center;
+	background: #F8F8F8;
+	height: auto;
+	padding-bottom: 10px;
+	padding-top: 20px;
+	position: relative;
+  width: 100%;
+  border-top: 1px solid #E7E7E7;
+  position: fixed;
+  bottom: 0;
+}
