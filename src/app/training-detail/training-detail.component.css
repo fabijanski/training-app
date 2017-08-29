@@ -1,0 +1,16 @@
+.container {
+    margin: 10% auto;
+}
+
+.position-left {
+    display: inline-block;
+}
+
+.panel-container {
+    border: 1px solid rgba(76, 117, 176, 1);
+}
+
+.panel-heading-overwritten {
+    background-color: rgba(76, 117, 176, 1);
+}
+

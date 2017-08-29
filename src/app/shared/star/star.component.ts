@@ -1,9 +1,10 @@
-import { Component, OnChanges, Input } from '@angular/core';
+import { Component, OnChanges, Input, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-star',
   templateUrl: './star.component.html',
-  styleUrls: ['./star.component.css']
+  styleUrls: ['./star.component.css'],
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class StarComponent implements OnChanges {
   @Input() difficulty: number;
@@ -12,7 +13,6 @@ export class StarComponent implements OnChanges {
   constructor() { }
 
   ngOnChanges(): void {
-    this.starWidth = this.difficulty * 86/5;
+    this.starWidth = this.difficulty * 86 / 5;
   }
-
 }

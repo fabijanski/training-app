@@ -3,7 +3,6 @@ import { ITraining } from './training';
 import { TrainingService } from './training.service';
 
 @Component({
-  selector: 'app-training-list',
   templateUrl: './training-list.component.html',
   styleUrls: ['./training-list.component.css']
 })

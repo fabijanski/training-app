@@ -8,5 +8,5 @@ import { TrainingService } from './training-list/training.service';
   providers: [TrainingService]
 })
 export class AppComponent {
-  title: string = 'Gym Assistant';
+  pageTitle: string = 'Gym Assistant';
 }

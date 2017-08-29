@@ -1,5 +1,28 @@
-<div class="panel panel-primary" *ngIf='training'>
-  <div class="panel-heading">
-    {{pageTitle + ': ' + training.trainingTitle}}
+<div class="container">
+  <div class="panel panel-primary panel-container" *ngIf='training'>
+    <div class="panel-heading panel-heading-overwritten">
+      <h3>
+        {{pageTitle + '. ' + training.trainingTitle}}
+      </h3>
+    </div>
+    <div class="panel-body">
+      <div class="row">
+        <div class="col-md-4">Difficulty:</div>
+        <div class="col-md-8">
+          <div class="position-left">
+            <app-star [difficulty]='training.difficulty'></app-star>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">Covers body parts:</div>
+        <div class="col-md-8">{{training.bodyParts}}</div>
+      </div>
+    </div>
+    <div class="panel-footer">
+      <a class="btn btn-default" (click)='onBack()' style='width: 80px'>
+        <i class="glyphicon glyphicon-chevron-left"></i>Back
+      </a>
+    </div>
   </div>
 </div>

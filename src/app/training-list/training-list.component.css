@@ -1,3 +1,7 @@
+.container {
+    margin: 10% auto;
+}
+
 .training-card {
     text-decoration: none;
     display: block;
@@ -5,18 +9,26 @@
     height: 14rem;
     margin: 2rem auto;
     text-align: center;
-    border: 1px solid #333;
+    border: 1px solid #4F5179;
     box-sizing: border-box;
-    background-color: #81DCD6;
+    background-color: rgba(76, 117, 176, 0.4);
     border-radius: .7rem;
 }
 
 .training-card:hover {
-    background-color: #76B0AD;
+    background-color: rgba(76, 117, 176, 1);
 }
 
 
 ul {
     list-style: none;
     padding: 0;
+}
+
+a {
+    color: rgba(76, 117, 176, 1);
+}
+
+a:hover {
+    color: #fff;
 }

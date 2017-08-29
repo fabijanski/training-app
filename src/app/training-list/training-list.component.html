@@ -1,4 +1,4 @@
-<div class="container jumbotron">
+<div class="container">
   <div class="row">
     <div class="col-sm-8">
       <h1 class="display-3">{{ pageTitle }}</h1>
@@ -13,10 +13,10 @@
   
   <ul class="row">
     <li class="col-sm-6 col-md-4" *ngFor='let training of filteredTrainings'>
-      <a href="" class="training-card">
+      <a [routerLink]="['/trainings', training.trainingId]" class="training-card">
         <h2>{{ training.trainingTitle }}</h2>
         <p>{{ training.description }}</p>
-        <app-star [difficulty]='training.difficulty'></app-star>
+        <app-star [difficulty]='training.difficulty' style="margin: 0 auto;"></app-star>
       </a>
     </li>
   </ul>

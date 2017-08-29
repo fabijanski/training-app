@@ -9,6 +9,7 @@ import { TrainingListComponent } from './training-list/training-list.component';
 import { StarComponent } from './shared/star/star.component';
 import { TrainingDetailComponent } from './training-detail/training-detail.component';
 import { WelcomeComponent } from './home/welcome.component';
+import { TrainingGuardService } from './training-list/training-guard.service';
 
 @NgModule({
   declarations: [
@@ -24,13 +25,15 @@ import { WelcomeComponent } from './home/welcome.component';
     HttpClientModule,
     RouterModule.forRoot([
       { path: 'trainings', component: TrainingListComponent },
-      { path: 'trainings/:id', component: TrainingDetailComponent },
+      { path: 'trainings/:id',
+        canActivate: [ TrainingGuardService ],
+        component: TrainingDetailComponent },
       { path: 'welcome', component: WelcomeComponent },
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
       { path: '**', redirectTo: 'welcome', pathMatch: 'full' }
     ])
   ],
-  providers: [],
+  providers: [TrainingGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
